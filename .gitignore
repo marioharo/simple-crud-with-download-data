@@ -6,8 +6,8 @@
 __pycache__/
 migrations/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
+#db.sqlite3
+#db.sqlite3-journal
 media
 
 # Environments
@@ -15,4 +15,3 @@ media
 
 ### Extras ###
 personas_crud.csv
-ejercicio.csv

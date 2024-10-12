@@ -16,6 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
 
     <body>
@@ -27,15 +28,15 @@
                 <!--Formulario-->
                 <div class="col-5">
                     <h3 class="text-center">Formulario de ingreso</h3>
-                    <form class="row" action="" method="post">
+                    <form action="" class="row" method="post">
                         {% csrf_token %}
-                        <label for="nombre_completo">Nombre Completo</label>
-                        <input class="form-control mb-3" type="text" name="nombre_completo" Required>
-                        <label for="nombre_completo">Peso</label>
-                        <input class="form-control mb-3" type="text" name="peso" Required>
-                        <label for="nombre_completo">Talla</label>
-                        <input class="form-control mb-3" type="text" name="talla" Required>
-                        <button class="btn btn-danger" type="submit">Enviar</button>
+                        <label>Nombre Completo</label>
+                        <input type="text" class="form-control mb-3" name="nombre_completo" Required>
+                        <label>Peso</label>
+                        <input type="text" class="form-control mb-3" name="peso" Required>
+                        <label>Talla</label>
+                        <input type="text" class="form-control mb-3" name="talla" Required>
+                        <button type="submit" class="btn btn-danger">Enviar</button>
                     </form>
                 </div>
                 <!--Tabla-->
@@ -49,6 +50,8 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Peso</th>
                                     <th scope="col">Talla</th>
+                                    <th class="text-center" scope="col">Editar</th>
+                                    <th class="text-center" scope="col">Borrar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,6 +61,8 @@
                                     <td>{{persona.nombre_completo}}</td>
                                     <td>{{persona.peso}}</td>
                                     <td>{{persona.talla}}</td>
+                                    <td class="text-center"><a href="editar/{{persona.id}}"><i class="bi bi-pencil-fill"></i></a></td>
+                                    <td class="text-center"><a href="eliminar/{{persona.id}}"><i class="bi bi-trash3-fill"></i></a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

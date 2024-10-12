@@ -25,3 +25,7 @@ def export_data():
     with open('personas_crud.csv', 'w') as file:
         data = csv.writer(file)
         data.writerow(headers)
+
+
+### Recoge toda la data del formulario como dict sin el token ###
+cleaned_data = lambda x:{k:v for k,v in x.items() if k != 'csrfmiddlewaretoken'}

@@ -21,4 +21,6 @@ from web import views as web_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', web_views.home, name='home'),
+    path('editar/<id>', web_views.editar, name='editar'),
+    path('eliminar/<id>', web_views.eliminar, name='eliminar'),
 ]
