@@ -25,5 +25,6 @@ def editar(request, id):
         persona.update(**data)
         return redirect('/')
 
-def eliminar(request):
-    ...
+def eliminar(request, id):
+    Persona.objects.get(id = id).delete()
+    return redirect('/')
