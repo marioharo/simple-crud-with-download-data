@@ -20,21 +20,25 @@
 
     <body>
         <header>
-            <h1 class="text-center">Editar</h1>
+            <h1 class="text-center py-4">Editar</h1>
         </header>
-        <main>
-            <form action="" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="id" value="{{persona.id}}" hidden> <!--Apunta al id de la data a editar de forma escondida-->
-                <label>Nombre completo:</label>
-                <input type="text" class="form-control" name="nombre_completo" value="{{persona.nombre_completo}}">
-                <label>Peso:</label>
-                <input type="text" class="form-control" name="peso" value="{{persona.peso}}">
-                <label>Talla:</label>
-                <input type="text" class="form-control" name="talla" value="{{persona.talla}}">
-                <button type="submit" class="btn btn-success">Guardar</button>
-                <a href="{% url "home" %}" class="btn btn-danger">Volver</a>
-            </form>
+        <main class="container">
+            <div class="mx-auto col-lg-6">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{persona.id}}" hidden> <!--Apunta al id de la data a editar de forma escondida-->
+                    <label>Nombre completo:</label>
+                    <input type="text" class="form-control" name="nombre_completo" value="{{persona.nombre_completo}}">
+                    <label>Peso:</label>
+                    <input type="text" class="form-control" name="peso" value="{{persona.peso}}">
+                    <label>Talla:</label>
+                    <input type="text" class="form-control" name="talla" value="{{persona.talla}}">
+                    <div class="my-2">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <a href="{% url "home" %}" class="btn btn-danger">Volver</a>
+                    </div>
+                </form>
+            </div>
         </main>
         <footer class="container-fluid bg-secondary">
             <p class="container text-center text-white py-2">Made with ♡ by Mario Haro</p>

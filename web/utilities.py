@@ -15,17 +15,6 @@ def import_data():
             talla = d[2],
             )
 
-### Rescata uno a uno los encabezados de los models separandolos por comas ###
-def get_model_headers(model):
-    return [field.name for field in model._meta.fields]
-
-def export_data():
-    """Función para crear csv con los encabezamos (headers) del modelo ingresado"""
-    headers = get_model_headers(Persona)
-    with open('personas_crud.csv', 'w') as file:
-        data = csv.writer(file)
-        data.writerow(headers)
-
 
 ### Recoge toda la data del formulario como dict sin el token ###
 cleaned_data = lambda x:{k:v for k,v in x.items() if k != 'csrfmiddlewaretoken'}
