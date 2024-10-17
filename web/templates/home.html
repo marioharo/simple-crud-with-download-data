@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>SIMPLE CRUD</title>
+        <title>CRUD</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -12,7 +12,7 @@
 
     <body>
         <header>
-            <h1 class="text-center py-4">SIMPLE CRUD</h1>
+            <h1 class="text-center py-4">CRUD</h1>
         </header>
         <main class="container">
             <div class="row">
@@ -21,12 +21,12 @@
                     <h3 class="text-center">Formulario de ingreso</h3>
                     <form action="" class="row" method="post">
                         {% csrf_token %}
-                        <label>Nombre Completo</label>
-                        <input type="text" class="form-control mb-3" name="nombre_completo" Required>
-                        <label>Peso</label>
-                        <input type="text" class="form-control mb-3" name="peso" Required>
-                        <label>Talla</label>
-                        <input type="text" class="form-control mb-3" name="talla" Required>
+                        <label for="nombre_completo">Nombre Completo</label>
+                        <input type="text" class="form-control bg-light mb-3" name="nombre_completo" id="nombre_completo" Required>
+                        <label for="peso">Peso</label>
+                        <input type="text" class="form-control bg-light mb-3" name="peso" id="peso" Required>
+                        <label for="talla">Talla</label>
+                        <input type="text" class="form-control bg-light mb-3" name="talla" id="talla" Required>
                         <button type="submit" class="btn btn-primary fs-4">Enviar</button>
                         <a href="descargar" class="btn btn-success mt-3 py-2">Descargar DB</a>
                     </form>
@@ -58,19 +58,19 @@
                                 </tr>
                                 <!-- Start Modal -->
                                 <div class="modal fade" id="exampleModal{{forloop.counter}}" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h2 class="modal-title fs-5" id="exampleModalLabel">Estas seguro que deseas eliminar a:</h2>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estás seguro de esta acción?</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p><b>Nombre:</b> {{persona.nombre_completo}}</p>
+                                                <p><b>Quiero eliminar a:</b> {{persona.nombre_completo}}</p>
                                                 <small><i>Nota: Esta acción no se puede revertir</i></small>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                <a href="eliminar/{{persona.id}}" class="btn btn-danger">Eliminar</a>
+                                                <a href="eliminar/{{persona.id}}" class="btn btn-danger">Si, eliminar</a>
                                             </div>
                                         </div>
                                     </div>
