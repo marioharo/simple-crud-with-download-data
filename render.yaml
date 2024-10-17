@@ -1,9 +1,3 @@
-databases:
-  - name: db
-    plan: free
-    databaseName: db
-    user: crud
-
 services:
   - type: web
     plan: free
