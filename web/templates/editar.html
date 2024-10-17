@@ -27,12 +27,12 @@
                 <form action="" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{persona.id}}" hidden> <!--Apunta al id de la data a editar de forma escondida-->
-                    <label>Nombre completo:</label>
-                    <input type="text" class="form-control" name="nombre_completo" value="{{persona.nombre_completo}}">
-                    <label>Peso:</label>
-                    <input type="text" class="form-control" name="peso" value="{{persona.peso}}">
-                    <label>Talla:</label>
-                    <input type="text" class="form-control" name="talla" value="{{persona.talla}}">
+                    <label for="nombre_completo">Nombre completo:</label>
+                    <input type="text" class="form-control bg-light mb-3" name="nombre_completo" id="nombre_completo" value="{{persona.nombre_completo}}">
+                    <label for="peso">Peso:</label>
+                    <input type="text" class="form-control bg-light mb-3" name="peso" id="peso" value="{{persona.peso}}">
+                    <label for="talla">Talla:</label>
+                    <input type="text" class="form-control bg-light mb-3" name="talla" id="talla" value="{{persona.talla}}">
                     <div class="my-2">
                         <button type="submit" class="btn btn-success">Guardar</button>
                         <a href="{% url "home" %}" class="btn btn-danger">Volver</a>
